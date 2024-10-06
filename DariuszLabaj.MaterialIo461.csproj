@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<Nullable>enable</Nullable>
+		<NoWarn>NU1900</NoWarn>
+		<UseWPF>true</UseWPF>
+		<LangVersion>10.0</LangVersion>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Assets\Icons\info_i.png" />
+	  <None Remove="Assets\Icons\mark_chat_read_negative.png" />
+	  <None Remove="Assets\Icons\mark_unread_chat_alt_negative.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Assets\Icons\add_circle.png" />
+		<Resource Include="Assets\Icons\arrow_back.png" />
+		<Resource Include="Assets\Icons\arrow_right.png" />
+		<Resource Include="Assets\Icons\block.png" />
+		<Resource Include="Assets\Icons\browse_activity.png" />
+		<Resource Include="Assets\Icons\cancel.png" />
+		<Resource Include="Assets\Icons\check_circle.png" />
+		<Resource Include="Assets\Icons\close.png" />
+		<Resource Include="Assets\Icons\data_alert.png" />
+		<Resource Include="Assets\Icons\data_check.png" />
+		<Resource Include="Assets\Icons\data_info_alert.png" />
+		<Resource Include="Assets\Icons\delete.png" />
+		<Resource Include="Assets\Icons\done.png" />
+		<Resource Include="Assets\Icons\download.png" />
+		<Resource Include="Assets\Icons\eject.png" />
+		<Resource Include="Assets\Icons\expand.png" />
+		<Resource Include="Assets\Icons\expand_more.png" />
+		<Resource Include="Assets\Icons\file_download_done.png" />
+		<Resource Include="Assets\Icons\file_open.png" />
+		<Resource Include="Assets\Icons\home.png" />
+		<Resource Include="Assets\Icons\info_i.png" />
+		<Resource Include="Assets\Icons\input.png" />
+		<Resource Include="Assets\Icons\input_inverted.png" />
+		<Resource Include="Assets\Icons\login.png" />
+		<Resource Include="Assets\Icons\logout.png" />
+		<Resource Include="Assets\Icons\mark_chat_read.png" />
+		<Resource Include="Assets\Icons\mark_chat_read_filled.png" />
+		<Resource Include="Assets\Icons\mark_chat_read_negative.png" />
+		<Resource Include="Assets\Icons\mark_chat_unread.png" />
+		<Resource Include="Assets\Icons\mark_chat_unread_filled.png" />
+		<Resource Include="Assets\Icons\mark_unread_chat_alt.png" />
+		<Resource Include="Assets\Icons\mark_unread_chat_alt_filled.png" />
+		<Resource Include="Assets\Icons\mark_unread_chat_alt_negative.png" />
+		<Resource Include="Assets\Icons\maximize.png" />
+		<Resource Include="Assets\Icons\menu.png" />
+		<Resource Include="Assets\Icons\menu_open.png" />
+		<Resource Include="Assets\Icons\minimize.png" />
+		<Resource Include="Assets\Icons\open_in_new.png" />
+		<Resource Include="Assets\Icons\password.png" />
+		<Resource Include="Assets\Icons\quick_reference.png" />
+		<Resource Include="Assets\Icons\quick_reference_all.png" />
+		<Resource Include="Assets\Icons\search.png" />
+		<Resource Include="Assets\Icons\select_all.png" />
+		<Resource Include="Assets\Icons\settings.png" />
+		<Resource Include="Assets\Icons\side_navigation.png" />
+		<Resource Include="Assets\Icons\start.png" />
+		<Resource Include="Assets\Icons\sync.png" />
+		<Resource Include="Assets\Icons\sync_inverse.png" />
+		<Resource Include="Assets\Icons\terminal.png" />
+		<Resource Include="Assets\Icons\upload.png" />
+	</ItemGroup>
+
+</Project>
