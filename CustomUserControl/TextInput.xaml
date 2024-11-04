@@ -8,6 +8,7 @@
              xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
              xmlns:local="clr-namespace:DariuszLabaj.MaterialIo461.CustomUserControl"
              mc:Ignorable="d" 
+             d:Background="white"
              >
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
@@ -73,20 +74,6 @@
                                             </Border>
                                         </Border>
                                         <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="SubBorder" Property="Background">
-                                                    <Setter.Value>
-                                                        <SolidColorBrush Color="#20000000"/>
-                                                    </Setter.Value>
-                                                </Setter>
-                                            </Trigger>
-                                            <Trigger Property="IsPressed" Value="True">
-                                                <Setter TargetName="SubBorder" Property="Background">
-                                                    <Setter.Value>
-                                                        <SolidColorBrush Color="#40000000"/>
-                                                    </Setter.Value>
-                                                </Setter>
-                                            </Trigger>
                                             <Trigger Property="IsEnabled" Value="False">
                                                 <Setter TargetName="MainBorder" Property="Opacity" Value="0.5"/>
                                             </Trigger>
