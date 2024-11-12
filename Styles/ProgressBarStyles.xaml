@@ -4,16 +4,21 @@
     <SolidColorBrush x:Key="ProgressBar.Progress" Color="#FF6750A4"/>
     <SolidColorBrush x:Key="ProgressBar.Background" Color="#FFE2E0F9"/>
     <SolidColorBrush x:Key="ProgressBar.Border" Color="#FFD4D3E8"/>
-    <Style x:Key="LinearProgressIndicator" TargetType="{x:Type ProgressBar}">
+    <conv:RectConverter x:Key="RectConverter"/>
+    <conv:StartPointConverter x:Key="StartPointConverter"/>
+    <Style x:Key="LinearProgressIndicator" TargetType="ProgressBar">
         <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}"/>
         <Setter Property="Background" Value="{StaticResource ProgressBar.Background}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Margin" Value="4"/>
         <Setter Property="Height" Value="4"/>
+        <Setter Property="Value" Value="0"/>
+        <Setter Property="Minimum" Value="0"/>
+        <Setter Property="Maximum" Value="100"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                <ControlTemplate TargetType="ProgressBar">
                     <Grid x:Name="TemplateRoot">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -44,9 +49,9 @@
                         <Grid x:Name="PART_Indicator" HorizontalAlignment="Left">
                             <Grid.Clip>
                                 <RectangleGeometry 
-                                Rect="{Binding RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:RectConverter}}"
-                                RadiusX="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Mode=OneWay, Converter={conv:ScaleConverter 0.5}}" 
-                                RadiusY="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Mode=OneWay, Converter={conv:ScaleConverter 0.5}}"/>
+                                    Rect="{Binding RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={StaticResource RectConverter}}"
+                                    RadiusX="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Mode=OneWay, Converter={conv:ScaleConverter 0.5}}" 
+                                    RadiusY="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Mode=OneWay, Converter={conv:ScaleConverter 0.5}}"/>
                             </Grid.Clip>
                             <Rectangle x:Name="Indicator"
                                         Fill="{TemplateBinding Foreground}"
@@ -56,8 +61,8 @@
                             <Rectangle x:Name="Animation"
                                         Fill="{TemplateBinding Foreground}"
                                         RenderTransformOrigin="0.5,0.5"
-                                        RadiusX="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}"
-                                        RadiusY="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}">
+                                        RadiusX="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 2}}"
+                                        RadiusY="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 2}}">
                                 <Rectangle.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>
@@ -100,10 +105,12 @@
         <Setter Property="Height" Value="100"/>
         <Setter Property="Width" Value="100"/>
         <Setter Property="Value" Value="30"/>
+        <Setter Property="Minimum" Value="0"/>
+        <Setter Property="Maximum" Value="100"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ProgressBar}">
-                    <Grid x:Name="TemplateRoot">
+                    <Grid x:Name="TemplateRoot" Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Determinate">
@@ -119,19 +126,18 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Ellipse x:Name="PART_Track"
-                             Stroke="{TemplateBinding Background}"
-                             StrokeThickness="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.1}}"/>
+                                 Stroke="{TemplateBinding Background}"
+                                 StrokeThickness="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.1}}"/>
                         <Path x:Name="PART_Indicator"
-                          Stroke="{TemplateBinding Foreground}"
-                          StrokeThickness="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.1}}"
-                          Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}}" Height="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}}"
-                          RenderTransformOrigin="0.5,.5">
+                              Stroke="{TemplateBinding Foreground}"
+                              StrokeThickness="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.1}}"
+                              Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}}" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}}"
+                              RenderTransformOrigin="0.5,.5">
                             <Path.Data>
                                 <PathGeometry>
-                                    <PathFigure StartPoint="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}">
-                                        <ArcSegment 
-                                        Size="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:SizeConverter}, Mode=OneWay}" 
-                                        SweepDirection="Clockwise">
+                                    <PathFigure StartPoint="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={StaticResource StartPointConverter}, Mode=OneWay}">
+                                        <ArcSegment Size="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:SizeConverter}, Mode=OneWay}" 
+                                                    SweepDirection="Clockwise">
                                             <ArcSegment.IsLargeArc>
                                                 <MultiBinding Converter="{conv:LargeArcConverter}" Mode="OneWay">
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
@@ -141,7 +147,7 @@
                                             </ArcSegment.IsLargeArc>
                                             <ArcSegment.Point>
                                                 <MultiBinding Converter="{conv:ArcEndPointConverter}" Mode="OneWay">
-                                                    <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualWidth"/>
+                                                    <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualHeight"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Minimum"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Maximum"/>
@@ -149,11 +155,10 @@
                                             </ArcSegment.Point>
                                         </ArcSegment>
                                     </PathFigure>
-                                    <PathFigure 
-                                    StartPoint="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}"
-                                    IsFilled="True" IsClosed="True">
+                                    <PathFigure StartPoint="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}"
+                                                IsFilled="True" IsClosed="True">
                                         <ArcSegment Size="5,5"
-                                                Point="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}"
+                                                Point="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}"
                                                 IsLargeArc="True"
                                                 RotationAngle="360"
                                                 SweepDirection="Clockwise"/>
@@ -161,7 +166,7 @@
                                     <PathFigure IsFilled="True" IsClosed="True">
                                         <PathFigure.StartPoint>
                                             <MultiBinding Converter="{conv:ArcEndPointConverter}" Mode="OneWay">
-                                                <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualWidth"/>
+                                                <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualHeight"/>
                                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
                                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Minimum"/>
                                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Maximum"/>
@@ -173,7 +178,7 @@
                                                 SweepDirection="Clockwise">
                                             <ArcSegment.Point>
                                                 <MultiBinding Converter="{conv:ArcEndPointConverter}" Mode="OneWay">
-                                                    <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualWidth"/>
+                                                    <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualHeight"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Minimum"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Maximum"/>
@@ -189,14 +194,14 @@
                         </Path>
                         <Path x:Name="Indicator"
                           Stroke="{TemplateBinding Foreground}"
-                          StrokeThickness="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.1}}"
-                          Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}}" Height="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}}"
+                          StrokeThickness="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.1}}"
+                          Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}}" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}}"
                           RenderTransformOrigin="0.5,.5">
                             <Path.Data>
                                 <PathGeometry>
-                                    <PathFigure StartPoint="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}">
+                                    <PathFigure StartPoint="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={StaticResource StartPointConverter}, Mode=OneWay}">
                                         <ArcSegment 
-                                        Size="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:SizeConverter}, Mode=OneWay}" 
+                                        Size="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:SizeConverter}, Mode=OneWay}" 
                                         SweepDirection="Clockwise">
                                             <ArcSegment.IsLargeArc>
                                                 <MultiBinding Converter="{conv:LargeArcConverter}" Mode="OneWay">
@@ -207,7 +212,7 @@
                                             </ArcSegment.IsLargeArc>
                                             <ArcSegment.Point>
                                                 <MultiBinding Converter="{conv:ArcEndPointConverter}" Mode="OneWay">
-                                                    <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualWidth"/>
+                                                    <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualHeight"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Minimum"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Maximum"/>
@@ -216,10 +221,10 @@
                                         </ArcSegment>
                                     </PathFigure>
                                     <PathFigure 
-                                        StartPoint="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}"
+                                        StartPoint="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}"
                                         IsFilled="True" IsClosed="True">
                                         <ArcSegment Size="5,5"
-                                                Point="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}"
+                                                Point="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:StartPointConverter}, Mode=OneWay}"
                                                 IsLargeArc="True"
                                                 RotationAngle="360"
                                                 SweepDirection="Clockwise"/>
@@ -227,7 +232,7 @@
                                     <PathFigure IsFilled="True" IsClosed="True">
                                         <PathFigure.StartPoint>
                                             <MultiBinding Converter="{conv:ArcEndPointConverter}" Mode="OneWay">
-                                                <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualWidth"/>
+                                                <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualHeight"/>
                                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
                                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Minimum"/>
                                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Maximum"/>
@@ -239,7 +244,7 @@
                                                 SweepDirection="Clockwise">
                                             <ArcSegment.Point>
                                                 <MultiBinding Converter="{conv:ArcEndPointConverter}" Mode="OneWay">
-                                                    <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualWidth"/>
+                                                    <Binding RelativeSource="{RelativeSource AncestorType=ProgressBar}" Path="ActualHeight"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Minimum"/>
                                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Maximum"/>
