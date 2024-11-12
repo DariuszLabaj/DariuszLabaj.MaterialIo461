@@ -9,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
+using System.Windows.Markup;
 
 namespace DariuszLabaj.MaterialIo461.Converters
 {
-    public class ArcEndPointConverter : IMultiValueConverter
+    public class ArcEndPointConverter : MarkupExtension, IMultiValueConverter
     {
+        public ArcEndPointConverter() { }
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values.Length < 4 ||
@@ -47,6 +49,12 @@ namespace DariuszLabaj.MaterialIo461.Converters
         {
             throw new NotImplementedException();
         }
+
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this;
+        }
+
         private Point GetPointFromAngle(double degrees, double size, double radius)
         {
             var radians = degrees * (Math.PI / 180);
