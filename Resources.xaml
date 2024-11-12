@@ -4,5 +4,6 @@
         <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/ButtonStyles.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/ComboBoxStyles.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/CardsStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/ProgressBarStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
