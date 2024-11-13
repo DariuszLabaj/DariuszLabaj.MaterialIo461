@@ -32,7 +32,6 @@ namespace DariuszLabaj.MaterialIo461.Converters
                 //double scaleX = System.Convert.ToDouble(values[3]);
                 double normalizaedValue = (value - minimum) / (maximum - minimum);
                 var val = normalizaedValue > 0.5;
-                Debug.WriteLine(val);
                 return val;
             }
             catch

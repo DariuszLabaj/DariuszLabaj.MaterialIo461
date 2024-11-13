@@ -34,6 +34,7 @@ namespace DariuszLabaj.MaterialIo461.Converters
                 //double scaleX = System.Convert.ToDouble(values[4]);
                 double normalizedValue = (value - minimum) / (maximum - minimum);
                 double angle = normalizedValue * 360;
+                if (angle >= 360) angle = 359.999;
                 double radius = (actualWidth / 2) - (actualWidth * 0.05);
                 var pt = GetPointFromAngle(degrees:angle, size:actualWidth, radius:radius);
                 Debug.WriteLine(pt);
@@ -58,8 +59,10 @@ namespace DariuszLabaj.MaterialIo461.Converters
         private Point GetPointFromAngle(double degrees, double size, double radius)
         {
             var radians = degrees * (Math.PI / 180);
-            int x = (int)Math.Round((size / 2) + (radius * (Math.Cos(radians))));
-            var y = (int)Math.Round((size / 2) + (radius * (Math.Sin(radians))));
+            //int x = (int)Math.Round((size / 2) + (radius * (Math.Cos(radians))));
+            //int y = (int)Math.Round((size / 2) + (radius * (Math.Sin(radians))));
+            double x = (size / 2) + (radius * (Math.Cos(radians)));
+            double y = (size / 2) + (radius * (Math.Sin(radians)));
             return new Point(x: x, y: y);
         }
     }

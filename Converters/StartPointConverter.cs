@@ -32,8 +32,10 @@ namespace DariuszLabaj.MaterialIo461.Converters
         private Point GetPointFromAngle(double degrees, double size, double radius)
         {
             var radians = degrees * (Math.PI / 180);
-            int x = (int)Math.Round((size / 2) + (radius * (Math.Cos(radians))));
-            var y = (int)Math.Round((size / 2) + (radius * (Math.Sin(radians))));
+            //int x = (int)Math.Round((size / 2) + (radius * (Math.Cos(radians))));
+            //int y = (int)Math.Round((size / 2) + (radius * (Math.Sin(radians))));
+            double x = (size / 2) + (radius * (Math.Cos(radians)));
+            double y = (size / 2) + (radius * (Math.Sin(radians)));
             return new Point(x: x, y: y);
         }
 
