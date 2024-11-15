@@ -21,7 +21,8 @@ namespace DariuszLabaj.MaterialIo461.Converters
             if (values.Length < 4 ||
                 values[0] == null ||
                 values[1] == null ||
-                values[2] == null)
+                values[2] == null ||
+                values[3] == null)
             {
                 return new Point(0, 0);
             }
@@ -37,7 +38,6 @@ namespace DariuszLabaj.MaterialIo461.Converters
                 if (angle >= 360) angle = 359.999;
                 double radius = (actualWidth / 2) - (actualWidth * 0.05);
                 var pt = GetPointFromAngle(degrees:angle, size:actualWidth, radius:radius);
-                Debug.WriteLine(pt);
                 return pt;
             }
             catch
