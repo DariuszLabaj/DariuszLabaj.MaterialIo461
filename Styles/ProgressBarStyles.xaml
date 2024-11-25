@@ -73,12 +73,98 @@
                                 </Rectangle.RenderTransform>
                             </Rectangle>
                         </Grid>
-                        <Rectangle 
-                        Fill="{TemplateBinding Foreground}" 
-                        RadiusX="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}" 
-                        RadiusY="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}" 
-                        Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}}" HorizontalAlignment="Right"/>
+                        <Rectangle Fill="{TemplateBinding Foreground}" 
+                                   RadiusX="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}" 
+                                   RadiusY="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}" 
+                                   Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}}" HorizontalAlignment="Right"/>
 
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="LayoutTransform" TargetName="TemplateRoot">
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsIndeterminate" Value="true">
+                            <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsIndeterminate" Value="False">
+                            <Setter Property="Visibility" TargetName="Animation" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LinearProgressIndicatorWihtoutStop" TargetType="ProgressBar">
+        <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}"/>
+        <Setter Property="Background" Value="{StaticResource ProgressBar.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.Border}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="Height" Value="4"/>
+        <Setter Property="Value" Value="0"/>
+        <Setter Property="Minimum" Value="0"/>
+        <Setter Property="Maximum" Value="100"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid x:Name="TemplateRoot">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Determinate"/>
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Animation" RepeatBehavior="Forever" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.25"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.25"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.25"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <PointAnimationUsingKeyFrames Storyboard.TargetName="Animation" RepeatBehavior="Forever" Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                                            <EasingPointKeyFrame KeyTime="0" Value="-0.5,0.5"/>
+                                            <EasingPointKeyFrame KeyTime="0:0:1" Value="0.5,0.5"/>
+                                            <EasingPointKeyFrame KeyTime="0:0:2" Value="1.5,0.5"/>
+                                        </PointAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="PART_Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}"/>
+                        <Rectangle x:Name="PART_Track"
+                        Fill ="{TemplateBinding Background}"
+                        RenderTransformOrigin="1,1"
+                        RadiusX="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}"
+                        RadiusY="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}">
+                        </Rectangle>
+                        <Grid x:Name="PART_Indicator" HorizontalAlignment="Left">
+                            <Grid.Clip>
+                                <RectangleGeometry 
+                            Rect="{Binding RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={StaticResource RectConverter}}"
+                            RadiusX="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Mode=OneWay, Converter={conv:ScaleConverter 0.5}}" 
+                            RadiusY="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Mode=OneWay, Converter={conv:ScaleConverter 0.5}}"/>
+                            </Grid.Clip>
+                            <Rectangle x:Name="Indicator"
+                                Fill="{TemplateBinding Foreground}"
+                                RadiusX="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}"
+                                RadiusY="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}">
+                            </Rectangle>
+                            <Rectangle x:Name="Animation"
+                                Fill="{TemplateBinding Foreground}"
+                                RenderTransformOrigin="0.5,0.5"
+                                RadiusX="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 2}}"
+                                RadiusY="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 2}}">
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Orientation" Value="Vertical">
