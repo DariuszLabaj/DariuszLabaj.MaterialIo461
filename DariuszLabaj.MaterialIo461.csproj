@@ -11,9 +11,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Assets\Icons\arrow_back_ios_new.png" />
+	  <None Remove="Assets\Icons\arrow_downward.png" />
+	  <None Remove="Assets\Icons\arrow_upward.png" />
+	  <None Remove="Assets\Icons\file_save.png" />
 	  <None Remove="Assets\Icons\info_i.png" />
+	  <None Remove="Assets\Icons\keyboard_arrow_down.png" />
+	  <None Remove="Assets\Icons\keyboard_arrow_left.png" />
+	  <None Remove="Assets\Icons\keyboard_arrow_right.png" />
+	  <None Remove="Assets\Icons\keyboard_arrow_up.png" />
 	  <None Remove="Assets\Icons\mark_chat_read_negative.png" />
 	  <None Remove="Assets\Icons\mark_unread_chat_alt_negative.png" />
+	  <None Remove="Assets\Icons\upload_file.png" />
+	  <None Remove="Assets\Icons\vertical_align_bottom.png" />
+	  <None Remove="Assets\Icons\vertical_align_top.png" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
@@ -21,7 +32,10 @@
 	<ItemGroup>
 		<Resource Include="Assets\Icons\add_circle.png" />
 		<Resource Include="Assets\Icons\arrow_back.png" />
+		<Resource Include="Assets\Icons\arrow_back_ios_new.png" />
+		<Resource Include="Assets\Icons\arrow_downward.png" />
 		<Resource Include="Assets\Icons\arrow_right.png" />
+		<Resource Include="Assets\Icons\arrow_upward.png" />
 		<Resource Include="Assets\Icons\block.png" />
 		<Resource Include="Assets\Icons\browse_activity.png" />
 		<Resource Include="Assets\Icons\cancel.png" />
@@ -38,10 +52,15 @@
 		<Resource Include="Assets\Icons\expand_more.png" />
 		<Resource Include="Assets\Icons\file_download_done.png" />
 		<Resource Include="Assets\Icons\file_open.png" />
+		<Resource Include="Assets\Icons\file_save.png" />
 		<Resource Include="Assets\Icons\home.png" />
 		<Resource Include="Assets\Icons\info_i.png" />
 		<Resource Include="Assets\Icons\input.png" />
 		<Resource Include="Assets\Icons\input_inverted.png" />
+		<Resource Include="Assets\Icons\keyboard_arrow_down.png" />
+		<Resource Include="Assets\Icons\keyboard_arrow_left.png" />
+		<Resource Include="Assets\Icons\keyboard_arrow_right.png" />
+		<Resource Include="Assets\Icons\keyboard_arrow_up.png" />
 		<Resource Include="Assets\Icons\login.png" />
 		<Resource Include="Assets\Icons\logout.png" />
 		<Resource Include="Assets\Icons\mark_chat_read.png" />
@@ -69,6 +88,9 @@
 		<Resource Include="Assets\Icons\sync_inverse.png" />
 		<Resource Include="Assets\Icons\terminal.png" />
 		<Resource Include="Assets\Icons\upload.png" />
+		<Resource Include="Assets\Icons\upload_file.png" />
+		<Resource Include="Assets\Icons\vertical_align_bottom.png" />
+		<Resource Include="Assets\Icons\vertical_align_top.png" />
 	</ItemGroup>
 
 </Project>
