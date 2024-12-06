@@ -14,6 +14,7 @@
 	  <None Remove="Assets\Icons\arrow_back_ios_new.png" />
 	  <None Remove="Assets\Icons\arrow_downward.png" />
 	  <None Remove="Assets\Icons\arrow_upward.png" />
+	  <None Remove="Assets\Icons\edit.png" />
 	  <None Remove="Assets\Icons\file_save.png" />
 	  <None Remove="Assets\Icons\info_i.png" />
 	  <None Remove="Assets\Icons\keyboard_arrow_down.png" />
@@ -47,6 +48,7 @@
 		<Resource Include="Assets\Icons\delete.png" />
 		<Resource Include="Assets\Icons\done.png" />
 		<Resource Include="Assets\Icons\download.png" />
+		<Resource Include="Assets\Icons\edit.png" />
 		<Resource Include="Assets\Icons\eject.png" />
 		<Resource Include="Assets\Icons\expand.png" />
 		<Resource Include="Assets\Icons\expand_more.png" />
