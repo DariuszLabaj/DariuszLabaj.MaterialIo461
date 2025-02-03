@@ -73,7 +73,7 @@
                                 </Rectangle.RenderTransform>
                             </Rectangle>
                         </Grid>
-                        <Rectangle Fill="{TemplateBinding Foreground}" 
+                        <Rectangle x:Name="ProgressBarStop" Fill="{TemplateBinding Foreground}" 
                                    RadiusX="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}" 
                                    RadiusY="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}, Converter={conv:ScaleConverter 0.5}}" 
                                    Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=ProgressBar}}" HorizontalAlignment="Right"/>
