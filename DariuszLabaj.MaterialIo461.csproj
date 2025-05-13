@@ -17,6 +17,7 @@
 	  <None Remove="Assets\Icons\arrow_upward.png" />
 	  <None Remove="Assets\Icons\edit.png" />
 	  <None Remove="Assets\Icons\file_save.png" />
+	  <None Remove="Assets\Icons\fitIcon.png" />
 	  <None Remove="Assets\Icons\info_i.png" />
 	  <None Remove="Assets\Icons\keyboard_arrow_down.png" />
 	  <None Remove="Assets\Icons\keyboard_arrow_left.png" />
@@ -24,6 +25,7 @@
 	  <None Remove="Assets\Icons\keyboard_arrow_up.png" />
 	  <None Remove="Assets\Icons\mark_chat_read_negative.png" />
 	  <None Remove="Assets\Icons\mark_unread_chat_alt_negative.png" />
+	  <None Remove="Assets\Icons\photoIcon.png" />
 	  <None Remove="Assets\Icons\upload_file.png" />
 	  <None Remove="Assets\Icons\vertical_align_bottom.png" />
 	  <None Remove="Assets\Icons\vertical_align_top.png" />
@@ -57,6 +59,7 @@
 		<Resource Include="Assets\Icons\file_download_done.png" />
 		<Resource Include="Assets\Icons\file_open.png" />
 		<Resource Include="Assets\Icons\file_save.png" />
+		<Resource Include="Assets\Icons\fitIcon.png" />
 		<Resource Include="Assets\Icons\home.png" />
 		<Resource Include="Assets\Icons\info_i.png" />
 		<Resource Include="Assets\Icons\input.png" />
@@ -81,6 +84,7 @@
 		<Resource Include="Assets\Icons\minimize.png" />
 		<Resource Include="Assets\Icons\open_in_new.png" />
 		<Resource Include="Assets\Icons\password.png" />
+		<Resource Include="Assets\Icons\photoIcon.png" />
 		<Resource Include="Assets\Icons\quick_reference.png" />
 		<Resource Include="Assets\Icons\quick_reference_all.png" />
 		<Resource Include="Assets\Icons\search.png" />
