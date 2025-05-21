@@ -6,5 +6,6 @@
         <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/CardsStyles.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/ProgressBarStyles.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/PathIcons.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/FontsResourceDictionary.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
