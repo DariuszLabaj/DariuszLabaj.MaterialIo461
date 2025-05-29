@@ -7,21 +7,23 @@
                 <ControlTemplate TargetType="ComboBox">
                     <Grid>
                         <Border x:Name="Border"
-                            CornerRadius="4"
+                            CornerRadius="8"
                             BorderBrush="#D0D0D0"
                             BorderThickness="2"
-                            Background="#F0F0F0">
+                            Background="{TemplateBinding Background}">
                             <ContentPresenter x:Name="ContentPresenter"
                                       Content="{TemplateBinding SelectionBoxItem}"
                                       ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                       ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                                       VerticalAlignment="Center"
-                                      Margin="16 8 0 8"/>
+                                      HorizontalAlignment="Left" Margin="4 0 16 0"/>
                         </Border>
                         <ToggleButton x:Name="ToggleButton"
                                   BorderBrush="Transparent"
                                   BorderThickness="2"
                                   Background="Transparent"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Right"
                                   Focusable="False"
                                   IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                   ClickMode="Press">

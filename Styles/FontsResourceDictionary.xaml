@@ -20,30 +20,35 @@
     <Style x:Key="Headline1Style" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeHeadline1}" />
+        <Setter Property="Margin" Value="4"/>
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
     
     <Style x:Key="Headline2Style" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeHeadline2}" />
+        <Setter Property="Margin" Value="4"/>
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
     
     <Style x:Key="Headline3Style" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeHeadline3}" />
+        <Setter Property="Margin" Value="4"/>
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
 
     <Style x:Key="BodyStyle" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeBody}" />
+        <Setter Property="Margin" Value="4"/>
         <Setter Property="FontWeight" Value="Normal" />
     </Style>
 
     <Style x:Key="CaptionStyle" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource SecondaryFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeCaption}" />
+        <Setter Property="Margin" Value="4"/>
         <Setter Property="FontWeight" Value="Normal" />
     </Style>
 </ResourceDictionary>
