@@ -18,7 +18,16 @@
                                  Background="#00FFFFFF">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="16 8 16 8">
                                 <ContentControl Content="{TemplateBinding Tag}" Margin="0 4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                <ContentPresenter Content="{TemplateBinding Content}" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <ContentPresenter Content="{TemplateBinding Content}" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="Padding" Value="4 0"/>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
                             </StackPanel>
                         </Border>
                     </Border>
@@ -68,10 +77,20 @@
                         <Border  x:Name="SubBorder" 
                                  Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
                                  CornerRadius="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}, Converter={converters:ScaleConverter 0.5}}" 
-                                 Background="#00FFFFFF">
+                                 Background="Transparent">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="16 8 16 8">
-                                <ContentControl Content="{TemplateBinding Tag}" Margin="0 4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                <ContentPresenter Content="{TemplateBinding Content}" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <ContentControl Content="{TemplateBinding Tag}" Foreground="{TemplateBinding Foreground}" Margin="0 4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}" TextBlock.Foreground="AliceBlue" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="Padding" Value="4 0"/>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
                             </StackPanel>
                         </Border>
                     </Border>
@@ -119,7 +138,16 @@
                                  Background="#00FFFFFF">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="16 8 16 8">
                                 <ContentControl Content="{TemplateBinding Tag}" Margin="0 4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                <ContentPresenter Content="{TemplateBinding Content}" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <ContentPresenter Content="{TemplateBinding Content}" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="Padding" Value="4 0"/>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
                             </StackPanel>
                         </Border>
                     </Border>
@@ -159,7 +187,16 @@
                                  Background="#00FFFFFF">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="16 8 16 8">
                                 <ContentControl Content="{TemplateBinding Tag}" Margin="0 4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                <ContentPresenter Content="{TemplateBinding Content}" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <ContentPresenter Content="{TemplateBinding Content}" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="Padding" Value="4 0"/>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
                             </StackPanel>
                         </Border>
                     </Border>

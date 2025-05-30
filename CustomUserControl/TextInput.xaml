@@ -10,6 +10,9 @@
              mc:Ignorable="d" 
              d:Background="white"
              >
+    <UserControl.Resources>
+        <converters:DesaturateColorConverter x:Key="DesaturateColorConverter"/>
+    </UserControl.Resources>
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -42,7 +45,7 @@
                      BorderThickness="0" Background="Transparent"
                      VerticalContentAlignment="Center"
                      Padding="8 8"
-                     Foreground="#303030"
+                     Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      x:Name="TextBoxField">
                 </TextBox>
                 <Canvas Grid.Column="0">
@@ -51,36 +54,18 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        Margin="8 4"
-                       Foreground="#707070"
+                       Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource DesaturateColorConverter}}"
                        Canvas.Top="12">
                         <TextBlock.RenderTransform>
                             <ScaleTransform ScaleX="1" ScaleY="1"/>
                         </TextBlock.RenderTransform>
                     </TextBlock>
                 </Canvas>
-                <Button Grid.Column="1" x:Name="button" Click="Button_Click">
-                    <Image x:Name="img" Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Assets/Icons/close.png" Width="16" Height="16" Stretch="Fill" Margin="8 4"/>
+                <Button Grid.Column="1" x:Name="button" Tag="{StaticResource close_48px_svg}" Click="Button_Click" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}">
                     <Button.Style>
-                        <Style TargetType="Button">
+                        <Style TargetType="Button" BasedOn="{StaticResource TextButton}">
                             <Setter Property="Visibility" Value="Visible"/>
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border x:Name="MainBorder" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
-                                            Background="Transparent"
-                                            BorderThickness="0" BorderBrush="Transparent">
-                                            <Border  x:Name="SubBorder" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}, Converter={converters:ScaleConverter 0.5}}" Background="#00FFFFFF">
-                                                <ContentPresenter x:Name="contentPresenter" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="16 8 16 8"/>
-                                            </Border>
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsEnabled" Value="False">
-                                                <Setter TargetName="MainBorder" Property="Opacity" Value="0.5"/>
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
+                            <Setter Property="MinWidth" Value="0"/>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="">
                                     <Setter Property="Visibility" Value="Hidden"/>

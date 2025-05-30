@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <!-- Define Font Families -->
-    <FontFamily x:Key="PrimaryFontFamily">Roboto</FontFamily>
-    <FontFamily x:Key="SecondaryFontFamily">Roboto Light</FontFamily>
+    <FontFamily x:Key="PrimaryFontFamily">pack://application:,,,/Assets/Fonts/Roboto-VariableFont_wdth,wght.ttf</FontFamily>
+    <FontFamily x:Key="SecondaryFontFamily">pack://application:,,,/Assets/Fonts/Roboto-Italic-VariableFont_wdth,wght.ttf</FontFamily>
 
     <!-- Font Sizes -->
     <system:Double x:Key="FontSizeHeadline1">32</system:Double>
