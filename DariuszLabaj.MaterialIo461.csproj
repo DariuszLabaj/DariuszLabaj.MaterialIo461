@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net461</TargetFramework>
+		<TargetFramework>net48</TargetFramework>
 		<Nullable>enable</Nullable>
 		<NoWarn>NU1900</NoWarn>
 		<UseWPF>true</UseWPF>
@@ -9,27 +9,6 @@
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
-
-	<ItemGroup>
-	  <None Remove="Assets\Fonts\PressStart2P-Regular.ttf" />
-	  <None Remove="Assets\Icons\arrow_back_ios_new.png" />
-	  <None Remove="Assets\Icons\arrow_downward.png" />
-	  <None Remove="Assets\Icons\arrow_upward.png" />
-	  <None Remove="Assets\Icons\edit.png" />
-	  <None Remove="Assets\Icons\file_save.png" />
-	  <None Remove="Assets\Icons\fitIcon.png" />
-	  <None Remove="Assets\Icons\info_i.png" />
-	  <None Remove="Assets\Icons\keyboard_arrow_down.png" />
-	  <None Remove="Assets\Icons\keyboard_arrow_left.png" />
-	  <None Remove="Assets\Icons\keyboard_arrow_right.png" />
-	  <None Remove="Assets\Icons\keyboard_arrow_up.png" />
-	  <None Remove="Assets\Icons\mark_chat_read_negative.png" />
-	  <None Remove="Assets\Icons\mark_unread_chat_alt_negative.png" />
-	  <None Remove="Assets\Icons\photoIcon.png" />
-	  <None Remove="Assets\Icons\upload_file.png" />
-	  <None Remove="Assets\Icons\vertical_align_bottom.png" />
-	  <None Remove="Assets\Icons\vertical_align_top.png" />
-	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
 	</ItemGroup>
