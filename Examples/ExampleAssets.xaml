@@ -6,164 +6,697 @@
       xmlns:local="clr-namespace:DariuszLabaj.MaterialIo461.Examples"
       xmlns:mt="clr-namespace:DariuszLabaj.MaterialIo461.CustomUserControl"
       mc:Ignorable="d" 
-      d:DesignHeight="1450" d:DesignWidth="730"
+      d:DesignHeight="9920" d:DesignWidth="730"
+      Background="{DynamicResource backgroundBrush}"
       Title="ExampleAssets">
-    <Border Background="{DynamicResource surfaceBrush}">
-        <WrapPanel HorizontalAlignment="Center">
-            <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Width="200"/>
-            <Button Style="{DynamicResource FilledButton}" Content="Button" Tag="{StaticResource add_2_48px_svg}"/>
-            <Button Style="{DynamicResource FilledButton}" Content="Button"/>
-            <Button Style="{DynamicResource ElevatedButton}" Content="Button" Tag="{StaticResource info_fill1_48px_svg}"/>
-            <Button Style="{DynamicResource ElevatedButton}" Content="Button"/>
-            <Button Style="{DynamicResource OutlinedButton}" Content="Button" Tag="{StaticResource circle_fill1_48px_svg}"/>
-            <Button Style="{DynamicResource OutlinedButton}" Content="Button"/>
-            <Button Style="{DynamicResource TextButton}" Content="Button" Tag="{StaticResource check_box_fill1_48px_svg}"/>
-            <Button Style="{DynamicResource TextButton}" Content="Button"/>
-
-            <ComboBox SelectedIndex="0">
-                <ComboBox.Items>
-                    <ComboBoxItem>
-                        <TextBlock Text="Test 1"/>
-                    </ComboBoxItem>
-                </ComboBox.Items>
-            </ComboBox>
-
-            <Border Style="{DynamicResource FilledCard}" Width="200">
-                <StackPanel>
-                    <TextBlock Text="Headline 1" Style="{DynamicResource Headline1Style}"/>
-                    <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
-                    <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
-                    <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
-                    <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
-                    <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
-                    <ComboBox SelectedIndex="0">
-                        <ComboBox.Items>
-                            <ComboBoxItem>
-                                <TextBlock Text="Test 1"/>
-                            </ComboBoxItem>
-                        </ComboBox.Items>
-                    </ComboBox>
-                    <ProgressBar Width="100" IsIndeterminate="True"/>
-                    <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+    <WrapPanel HorizontalAlignment="Center">
+        <Border Width="610" Margin="8">
+            <StackPanel>
+                <TextBlock Text="Headline 1" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
                     <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup"/>
                 </StackPanel>
-            </Border>
-            <Border Style="{DynamicResource FilledCardSecondary}" Width="200">
-                <StackPanel>
-                    <TextBlock Text="Headline 1" Style="{DynamicResource Headline1Style}"/>
-                    <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
-                    <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
-                    <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
-                    <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
-                    <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
-                    <ComboBox SelectedIndex="0">
-                        <ComboBox.Items>
-                            <ComboBoxItem>
-                                <TextBlock Text="Test 1"/>
-                            </ComboBoxItem>
-                        </ComboBox.Items>
-                    </ComboBox>
-                    <ProgressBar Width="100" IsIndeterminate="True"/>
-                    <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource FilledCard}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 FilledCard" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
                     <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup1" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup1"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup1"/>
                 </StackPanel>
-            </Border>
-            <Border Style="{DynamicResource ElevatedCard}" Width="200">
-                <StackPanel>
-                    <TextBlock Text="Headline 1" Style="{DynamicResource Headline1Style}"/>
-                    <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
-                    <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
-                    <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
-                    <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
-                    <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
-                    <ComboBox SelectedIndex="0">
-                        <ComboBox.Items>
-                            <ComboBoxItem>
-                                <TextBlock Text="Test 0123456789"/>
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                <TextBlock Text="Test 2"/>
-                            </ComboBoxItem>
-                            <ComboBoxItem>
-                                <TextBlock Text="Test 3"/>
-                            </ComboBoxItem>
-                        </ComboBox.Items>
-                    </ComboBox>
-                    <ProgressBar Width="100" IsIndeterminate="True"/>
-                    <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource ElevatedCard}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 ElevatedCard" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 0123456789"/>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 2"/>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 3"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
                     <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup3" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup3"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup3"/>
                 </StackPanel>
-            </Border>
-            <Border Style="{DynamicResource ElevatedCardSecondary}" Width="200">
-                <StackPanel>
-                    <TextBlock Text="Headline 1" Style="{DynamicResource Headline1Style}"/>
-                    <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
-                    <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
-                    <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
-                    <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
-                    <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
-                    <ComboBox SelectedIndex="0">
-                        <ComboBox.Items>
-                            <ComboBoxItem>
-                                <TextBlock Text="Test 1"/>
-                            </ComboBoxItem>
-                        </ComboBox.Items>
-                    </ComboBox>
-                    <ProgressBar Width="100" IsIndeterminate="True"/>
-                    <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource OutlinedCard}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 OutlinedCard" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
                     <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup5" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup5"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup5"/>
                 </StackPanel>
-            </Border>
-            <Border Style="{DynamicResource OutlinedCard}" Width="200">
-                <StackPanel>
-                    <TextBlock Text="Headline 1" Style="{DynamicResource Headline1Style}"/>
-                    <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
-                    <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
-                    <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
-                    <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
-                    <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
-                    <ComboBox SelectedIndex="0">
-                        <ComboBox.Items>
-                            <ComboBoxItem>
-                                <TextBlock Text="Test 1"/>
-                            </ComboBoxItem>
-                        </ComboBox.Items>
-                    </ComboBox>
-                    <ProgressBar Width="100" IsIndeterminate="True"/>
-                    <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource FilledCardPrimary}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 FilledCardPrimary" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
                     <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup1" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup1"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup1"/>
                 </StackPanel>
-            </Border>
-            <Border Style="{DynamicResource OutlinedCardSecondary}" Width="200">
-                <StackPanel>
-                    <TextBlock Text="Headline 1" Style="{DynamicResource Headline1Style}"/>
-                    <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
-                    <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
-                    <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
-                    <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
-                    <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
-                    <ComboBox SelectedIndex="0">
-                        <ComboBox.Items>
-                            <ComboBoxItem>
-                                <TextBlock Text="Test 1"/>
-                            </ComboBoxItem>
-                        </ComboBox.Items>
-                    </ComboBox>
-                    <ProgressBar Width="100" IsIndeterminate="True"/>
-                    <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource ElevatedCardPrimary}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 ElevatedCardPrimary" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 0123456789"/>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 2"/>
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 3"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
                     <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup3" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup3"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup3"/>
                 </StackPanel>
-            </Border>
-
-            <ProgressBar Width="100" Value="30"/>
-            <ProgressBar Width="100" IsIndeterminate="True"/>
-            <ProgressBar Style="{DynamicResource LinearProgressIndicator}" Width="100" Value="30"/>
-            <ProgressBar Style="{DynamicResource LinearProgressIndicator}" Width="100" IsIndeterminate="True"/>
-            <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True" Height="32"/>
-            <ProgressBar Style="{DynamicResource CircularProgressIndicator}" Value="30" Height="32"/>
-            <ToggleButton/>
-            <ToggleButton IsChecked="True"/>
-            <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
-        </WrapPanel>
-    </Border>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource OutlinedCardPrimary}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 OutlinedCardPrimary" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
+                    <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup5" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup5"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup5"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource FilledCardSecondary}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 FilledCardSecondary" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
+                    <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup2" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup2"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup2"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource ElevatedCardSecondary}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 ElevatedCardSecondary" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
+                    <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup4" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup4"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup4"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource OutlinedCardSecondary}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 OutlinedCardSecondary" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
+                    <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup6" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup6"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup6"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource FilledCardTeriary}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 FilledCardTeriary" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
+                    <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup2" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup2"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup2"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource ElevatedCardTeriary}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 ElevatedCardTeriary" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
+                    <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup4" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup4"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup4"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Style="{DynamicResource OutlinedCardTeriary}" Width="610">
+            <StackPanel>
+                <TextBlock Text="Headline 1 OutlinedCardTeriary" Style="{DynamicResource Headline1Style}"/>
+                <TextBlock Text="Headline 2" Style="{DynamicResource Headline2Style}"/>
+                <TextBlock Text="Headline 3" Style="{DynamicResource Headline3Style}"/>
+                <TextBlock Text="Caption" Style="{DynamicResource CaptionStyle}"/>
+                <TextBlock Text="A quick brown fox jump over a lazy dog" TextWrapping="WrapWithOverflow"/>
+                <mt:TextInput Label="Textfield" SupportingText="Supporting Text" Text="TestField"/>
+                <ComboBox SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>
+                            <TextBlock Text="Test 1"/>
+                        </ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <ProgressBar Width="100" IsIndeterminate="True"/>
+                <ProgressBar Style="{DynamicResource CircularProgressIndicator}" IsIndeterminate="True"/>
+                <WrapPanel HorizontalAlignment="Center">
+                    <ToggleButton IsChecked="True"/>
+                    <ToggleButton IsChecked="False"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button Style="{DynamicResource FilledSurfaceButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledContainerButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledSecondaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledTeriaryButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource FilledButton}" Content="Button 2" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource ElevatedButton}" Content="Button 1" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource OutlinedButton}" Content="Button 3" Tag="{StaticResource info_fill1_48px_svg}"/>
+                    <Button Style="{DynamicResource TextButton}" Content="Button 4" Tag="{StaticResource info_fill1_48px_svg}"/>
+                </WrapPanel>
+                <TabControl Width="400">
+                    <TabItem Header="Tab 1">
+                        <TextBlock Text="Tab 1 Content"/>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="Tab 2 Content"/>
+                    </TabItem>
+                </TabControl>
+                <Slider Minimum="0" Maximum="100" Value="50" Width="200"/>
+                <ListView Width="300">
+                    <ListViewItem Content="List Item 1"/>
+                    <ListViewItem Content="List Item 2"/>
+                </ListView>
+                <CheckBox Content="Checkbox" IsChecked="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton Content="Option A" GroupName="SampleGroup6" IsChecked="True"/>
+                    <RadioButton Content="Option B" GroupName="SampleGroup6"/>
+                    <RadioButton Content="Option C" GroupName="SampleGroup6"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </WrapPanel>
 </Page>

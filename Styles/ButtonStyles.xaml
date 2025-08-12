@@ -8,7 +8,7 @@
                     <Border x:Name="MainBorder" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
                             Background="{TemplateBinding Background}"
                             CornerRadius="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}, Converter={converters:ScaleConverter 0.5}}"
-                            BorderThickness="0" BorderBrush="Transparent" Opacity="1">
+                            BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Opacity="1">
                         <Border.Effect>
                             <DropShadowEffect Color="Black" Direction="325" ShadowDepth="2.5" Opacity="0.5"/>
                         </Border.Effect>
@@ -73,7 +73,7 @@
                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
                         Background="{TemplateBinding Background}"
                         CornerRadius="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}, Converter={converters:ScaleConverter 0.5}}"
-                        BorderThickness="0" BorderBrush="Transparent">
+                        BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
                         <Border  x:Name="SubBorder" 
                                  Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
                                  CornerRadius="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}, Converter={converters:ScaleConverter 0.5}}" 
@@ -186,7 +186,7 @@
                                  CornerRadius="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}, Converter={converters:ScaleConverter 0.5}}" 
                                  Background="#00FFFFFF">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="16 8 16 8">
-                                <ContentControl Content="{TemplateBinding Tag}" Margin="0 4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <ContentControl Content="{TemplateBinding Tag}" Margin="0 4" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}"/>
                                 <ContentPresenter Content="{TemplateBinding Content}" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Center">
                                     <ContentPresenter.Resources>
                                         <Style TargetType="TextBlock">
@@ -225,8 +225,8 @@
     </Style>
     <Style x:Key="ElevatedSwitch" TargetType="ToggleButton">
         <Style.Resources>
-            <SolidColorBrush x:Key="TrackBrush" Color="#CCC"/>
-            <SolidColorBrush x:Key="ThumbBrush" Color="#666"/>
+            <SolidColorBrush x:Key="TrackBrush" Color="#C0C0C0"/>
+            <SolidColorBrush x:Key="ThumbBrush" Color="#606060"/>
             <Visibility x:Key="SwitchActiveVisibility">Visible</Visibility>
         </Style.Resources>
         <Setter Property="Width" Value="52"/>
@@ -292,10 +292,18 @@
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Track" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#EEE"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <StaticResource ResourceKey="TrackBrush"/>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Thumb" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#CCC"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <StaticResource ResourceKey="ThumbBrush"/>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

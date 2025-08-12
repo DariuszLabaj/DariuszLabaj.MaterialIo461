@@ -156,5 +156,14 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
             TextBoxField.Password = "";
             TextBox_LostFocus(sender, e);
         }
+        new public void Focus()
+        {
+            TextBoxField.Focus();
+        }
+        public event KeyEventHandler PasswordBoxKeyDown
+        {
+            add { TextBoxField.KeyDown += value; }
+            remove { TextBoxField.KeyDown -= value; }
+        }
     }
 }

@@ -61,7 +61,7 @@
                         </TextBlock.RenderTransform>
                     </TextBlock>
                 </Canvas>
-                <Button Grid.Column="1" x:Name="button" Tag="{StaticResource close_48px_svg}" Click="Button_Click" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                <Button Grid.Column="1" x:Name="button" Content="{StaticResource close_48px_svg}" Click="Button_Click" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}">
                     <Button.Style>
                         <Style TargetType="Button" BasedOn="{StaticResource TextButton}">
                             <Setter Property="Visibility" Value="Visible"/>

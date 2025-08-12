@@ -6,6 +6,7 @@
     <SolidColorBrush x:Key="ProgressBar.Border" Color="#FFD4D3E8"/>
     <conv:RectConverter x:Key="RectConverter"/>
     <conv:StartPointConverter x:Key="StartPointConverter"/>
+    <conv:RotateTransformConverter x:Key="RotateTransformConverter"/>
     <Style x:Key="LinearProgressIndicator" TargetType="ProgressBar">
         <Setter Property="Foreground" Value="{DynamicResource ProgressBar.Progress}"/>
         <Setter Property="Background" Value="{DynamicResource ProgressBar.Background}"/>
@@ -346,7 +347,7 @@
                                 <TransformGroup>
                                     <RotateTransform>
                                         <RotateTransform.Angle>
-                                            <MultiBinding Converter="{conv:RotateTransformConverter}">
+                                            <MultiBinding Converter="{StaticResource RotateTransformConverter}">
                                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Value"/>
                                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Minimum"/>
                                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Maximum"/>
