@@ -11,6 +11,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Examples\**" />
+	  <EmbeddedResource Remove="Examples\**" />
+	  <None Remove="Examples\**" />
+	  <Page Remove="Examples\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Assets\Fonts\Roboto-Italic-VariableFont_wdth,wght.ttf" />
 	  <None Remove="Assets\Fonts\Roboto-VariableFont_wdth,wght.ttf" />
 	</ItemGroup>
