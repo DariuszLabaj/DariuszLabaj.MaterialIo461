@@ -35,7 +35,6 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
             {
                 if (!textBoxControl.IsLoaded)
                 {
-                    // Ensure that the events are not added multiple times
                     textBoxControl.Loaded -= TextBoxControl_Loaded;
                     textBoxControl.Loaded += TextBoxControl_Loaded;
                 }
@@ -43,9 +42,10 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
                 textBoxControl.TextChanged -= TextBoxControl_TextChanged;
                 textBoxControl.TextChanged += TextBoxControl_TextChanged;
 
-                // If the adorner exists, invalidate it to draw the current text
-                if (GetOrCreateAdorner(textBoxControl, out LabelAdorner? adorner))
-                    adorner?.InvalidateVisual();
+                if (GetOrCreateAdorner(textBoxControl, out LabelAdorner? adorner) && adorner != null)
+                {
+                    UpdateAdornerVisibility(textBoxControl, adorner);
+                }
             }
         }
 
@@ -54,43 +54,42 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
             if (sender is TextBox textBoxControl)
             {
                 textBoxControl.Loaded -= TextBoxControl_Loaded;
-                GetOrCreateAdorner(textBoxControl, out _);
+                if (GetOrCreateAdorner(textBoxControl, out LabelAdorner? adorner) && adorner != null)
+                {
+                    UpdateAdornerVisibility(textBoxControl, adorner);
+                }
             }
         }
 
         private static void TextBoxControl_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (sender is TextBox textBoxControl
-                && GetOrCreateAdorner(textBoxControl, out LabelAdorner? adorner))
+                && GetOrCreateAdorner(textBoxControl, out LabelAdorner? adorner)
+                && adorner != null)
             {
-                if (adorner == null)
-                    return;
-                // Control has text. Hide the adorner.
-                if (textBoxControl.Text.Length > 0)
-                    adorner.Visibility = Visibility.Hidden;
-
-                // Control has no text. Show the adorner.
-                else
-                    adorner.Visibility = Visibility.Visible;
+                UpdateAdornerVisibility(textBoxControl, adorner);
             }
+        }
+
+        private static void UpdateAdornerVisibility(TextBox textBoxControl, LabelAdorner adorner)
+        {
+            adorner.Visibility = string.IsNullOrEmpty(textBoxControl.Text)
+                ? Visibility.Visible
+                : Visibility.Hidden;
         }
 
         private static bool GetOrCreateAdorner(TextBox textBoxControl, out LabelAdorner? adorner)
         {
-            // Get the adorner layer
             AdornerLayer layer = AdornerLayer.GetAdornerLayer(textBoxControl);
 
-            // If null, it doesn't exist or the control's template isn't loaded
             if (layer == null)
             {
                 adorner = null;
                 return false;
             }
 
-            // Layer exists, try to find the adorner
             adorner = layer.GetAdorners(textBoxControl)?.OfType<LabelAdorner>().FirstOrDefault();
 
-            // Adorner never added to control, so add it
             if (adorner == null)
             {
                 adorner = new LabelAdorner(textBoxControl);
@@ -113,7 +112,6 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
                 if (string.IsNullOrEmpty(labelValue))
                     return;
 
-                // Create the formatted text object
                 FormattedText text = new FormattedText(
                                             labelValue,
                                             System.Globalization.CultureInfo.CurrentCulture,
@@ -129,10 +127,8 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
                 text.MaxTextWidth = System.Math.Max(textBoxControl.ActualWidth - textBoxControl.Padding.Left - textBoxControl.Padding.Right, 10);
                 text.MaxTextHeight = System.Math.Max(textBoxControl.ActualHeight, 10);
 
-                // Render based on padding of the control, to try and match where the textbox places text
                 Point renderingOffset = new Point(textBoxControl.Padding.Left, textBoxControl.Padding.Top);
 
-                // Template contains the content part; adjust sizes to try and align the text
                 if (textBoxControl.Template.FindName("PART_ContentHost", textBoxControl) is FrameworkElement part)
                 {
                     Point partPosition = part.TransformToAncestor(textBoxControl).Transform(new Point(0, 0));
@@ -143,7 +139,6 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
                     text.MaxTextHeight = System.Math.Max(part.ActualHeight, 10);
                 }
 
-                // Draw the text
                 drawingContext.DrawText(text, renderingOffset);
             }
         }
