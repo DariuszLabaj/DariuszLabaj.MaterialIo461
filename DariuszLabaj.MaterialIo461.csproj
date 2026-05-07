@@ -25,7 +25,6 @@
 		<PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
 	</ItemGroup>
 	<ItemGroup>
-		<Resource Include="Assets\Fonts\PressStart2P-Regular.ttf" />
 		<Resource Include="Assets\Fonts\Roboto-Italic-VariableFont_wdth,wght.ttf" />
 		<Resource Include="Assets\Fonts\Roboto-VariableFont_wdth,wght.ttf" />
 		<Resource Include="Assets\Icons\add_circle.png" />
@@ -92,6 +91,10 @@
 		<Resource Include="Assets\Icons\upload_file.png" />
 		<Resource Include="Assets\Icons\vertical_align_bottom.png" />
 		<Resource Include="Assets\Icons\vertical_align_top.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Themes\Schemes\" />
+	  <Folder Include="Themes\Palettes\" />
 	</ItemGroup>
 
 </Project>
