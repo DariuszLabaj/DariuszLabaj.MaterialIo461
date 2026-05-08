@@ -200,6 +200,14 @@
         <Setter Property="SupportingTextForeground" Value="{DynamicResource onSecondaryContainerBrush}"/>
     </Style>
     <Style TargetType="md:TextInput" BasedOn="{StaticResource md.TextInput}"/>
+    <!-- Password Input -->
+    <Style x:Key="md.PasswordInput" TargetType="md:PasswordInput" BasedOn="{StaticResource md.PasswordInput}">
+        <Setter Property="Background" Value="{DynamicResource surfaceContainerBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource onSurfaceBrush}"/>
+        <Setter Property="SupportingTextBackground" Value="{DynamicResource secondaryContainerBrush}"/>
+        <Setter Property="SupportingTextForeground" Value="{DynamicResource onSecondaryContainerBrush}"/>
+    </Style>
+    <Style TargetType="md:PasswordInput" BasedOn="{StaticResource md.PasswordInput}"/>
     <!-- TabControl -->
     <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}">
         <Setter Property="Background" Value="{DynamicResource tertiaryContainerBrush}"/>

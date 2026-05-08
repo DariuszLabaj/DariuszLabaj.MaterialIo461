@@ -168,6 +168,23 @@
         <Setter Property="SupportingTextForeground" Value="{DynamicResource onPrimaryContainerBrush}"/>
     </Style>
     <Style TargetType="md:TextInput" BasedOn="{StaticResource md.TextInput}"/>
+    <!-- Password Input -->
+    <Style x:Key="md.PasswordInput" TargetType="md:PasswordInput" BasedOn="{StaticResource md.PasswordInput}">
+        <Setter Property="Background" Value="{DynamicResource surfaceContainerBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource onSurfaceBrush}"/>
+        <Setter Property="SupportingTextBackground" Value="{DynamicResource primaryContainerBrush}"/>
+        <Setter Property="SupportingTextForeground" Value="{DynamicResource onPrimaryContainerBrush}"/>
+    </Style>
+    <Style TargetType="md:PasswordInput" BasedOn="{StaticResource md.PasswordInput}"/>
+    <!-- Search Box -->
+    <Style x:Key="md.SearchBox" TargetType="md:SearchBox" BasedOn="{StaticResource md.SearchBox}">
+        <Setter Property="Background" Value="{DynamicResource surfaceContainerBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource onSurfaceBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource outlineBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Tag" Value="{DynamicResource outlineBrush}"/>
+    </Style>
+    <Style TargetType="md:SearchBox" BasedOn="{StaticResource md.SearchBox}"/>
     <!-- TabControl -->
     <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}">
         <Setter Property="Background" Value="{DynamicResource secondaryContainerBrush}"/>

@@ -9,7 +9,6 @@
              xmlns:local="clr-namespace:DariuszLabaj.MaterialIo461.CustomUserControl"
              mc:Ignorable="d" 
              Height="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 3}}"
-             d:Background="white"
              >
     <UserControl.Resources>
         <converters:DesaturateColorConverter x:Key="DesaturateColorConverter"/>
@@ -84,6 +83,9 @@
                             <Setter Property="MinWidth" Value="0"/>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="{x:Null}">
                                     <Setter Property="Visibility" Value="Hidden"/>
                                 </DataTrigger>
                                 <Trigger Property="IsEnabled" Value="False">

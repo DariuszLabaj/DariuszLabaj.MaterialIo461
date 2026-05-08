@@ -55,17 +55,12 @@
     <Style TargetType="ScrollBar" BasedOn="{StaticResource md.ScrollBar}"/>
     <!-- ScrollViewer -->
     <Style TargetType="ScrollViewer" BasedOn="{StaticResource md.ScrollViewer}"/>
+    <!-- Search Box -->
+    <Style TargetType="md:SearchBox" BasedOn="{StaticResource md.SearchBox}"/>
     <!-- Text Input -->
-    <Style x:Key="md.TextInput" TargetType="md:TextInput">
-        <Setter Property="Background" Value="{DynamicResource surfaceContainerBrush}"/>
-        <Setter Property="Foreground" Value="{DynamicResource onSurfaceBrush}"/>
-        <Setter Property="SupportingTextBackground" Value="{DynamicResource backgroundBrush}"/>
-        <Setter Property="SupportingTextForeground" Value="{DynamicResource onBackgroundBrush}"/>
-        <Setter Property="FontSize" Value="{DynamicResource md.sys.typescale.body-medium-size}"/>
-        <Setter Property="Margin" Value="4"/>
-        <Setter Property="MinWidth" Value="120"/>
-    </Style>
     <Style TargetType="md:TextInput" BasedOn="{StaticResource md.TextInput}"/>
+    <!-- Password Input -->
+    <Style TargetType="md:PasswordInput" BasedOn="{StaticResource md.PasswordInput}"/>
     <!-- TabControl -->
     <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}">
     </Style>
