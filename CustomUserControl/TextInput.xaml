@@ -8,6 +8,7 @@
              xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
              xmlns:local="clr-namespace:DariuszLabaj.MaterialIo461.CustomUserControl"
              mc:Ignorable="d" 
+             Height="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 3}}"
              d:Background="white"
              >
     <UserControl.Resources>
@@ -18,7 +19,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Border x:Name="border" CornerRadius="4 4 0 0" BorderThickness="0 0 0 3" BorderBrush="#303030">
+        <Border x:Name="border" CornerRadius="4 4 0 0" BorderThickness="0 0 0 3" BorderBrush="{DynamicResource outlineBrush}">
             <Border.Style>
                 <Style TargetType="Border">
                     <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
@@ -27,7 +28,7 @@
                             <Setter Property="BorderBrush" Value="{Binding AccentColor, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding ElementName=TextBoxField, Path=(Validation.HasError)}" Value="True">
-                            <Setter Property="BorderBrush" Value="Red"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource errorBrush}"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -37,33 +38,48 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBox Margin="-1 8 0 4"
-                     Grid.Column="0"
-                     Text="{Binding Text, RelativeSource={RelativeSource AncestorType=UserControl}, UpdateSourceTrigger=PropertyChanged}"
-                     TextWrapping="{Binding TextWrapping, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                     AcceptsReturn="{Binding AcceptsReturn, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                     BorderThickness="0" Background="Transparent"
-                     VerticalContentAlignment="Center"
-                     Padding="8 8"
-                     Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                     x:Name="TextBoxField">
+                <TextBox Margin="-2 8 0 0" Grid.Column="0"
+                         Text="{Binding Text, RelativeSource={RelativeSource AncestorType=UserControl}, UpdateSourceTrigger=PropertyChanged}"
+                         TextWrapping="{Binding TextWrapping, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                         AcceptsReturn="{Binding AcceptsReturn, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                         FontFamily="{Binding FontFamily, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                         FontSize="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                         FontStretch="{Binding FontStretch, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                         FontStyle="{Binding FontStyle, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                         FontWeight="{Binding FontWeight, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                         BorderThickness="0" Background="Transparent"
+                         VerticalContentAlignment="Center"
+                         Padding="8 4"
+                         Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                         x:Name="TextBoxField">
                 </TextBox>
                 <Canvas Grid.Column="0">
                     <TextBlock IsHitTestVisible="False" x:Name="label"
-                       Text="{Binding Label, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"
-                       Margin="8 4"
-                       Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource DesaturateColorConverter}}"
-                       Canvas.Top="12">
+                               Text="{Binding Label, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                               FontFamily="{Binding FontFamily, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                               Margin="8 4"
+                               Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource DesaturateColorConverter}}"
+                               Canvas.Top="12">
                         <TextBlock.RenderTransform>
                             <ScaleTransform ScaleX="1" ScaleY="1"/>
                         </TextBlock.RenderTransform>
                     </TextBlock>
                 </Canvas>
-                <Button Grid.Column="1" x:Name="button" Content="{StaticResource close_48px_svg}" Click="Button_Click" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                <Button Grid.Column="1" x:Name="button" 
+                        Content="{StaticResource close_48px_svg}"
+                        VerticalAlignment="Center"
+                        Click="Button_Click"
+                        Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        Height="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 1.5}}"
+                        Margin="0 8 0 0"
+                        Padding="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False">
                     <Button.Style>
-                        <Style TargetType="Button" BasedOn="{StaticResource TextButton}">
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
                             <Setter Property="Visibility" Value="Visible"/>
                             <Setter Property="MinWidth" Value="0"/>
                             <Style.Triggers>
@@ -80,10 +96,26 @@
             </Grid>
         </Border>
         <Border Grid.Row="1" Background="{Binding SupportingTextBackground,RelativeSource={RelativeSource AncestorType=UserControl}}">
-            <TextBlock Text="{Binding SupportingText, RelativeSource={RelativeSource AncestorType=UserControl}}" 
-                   FontWeight="Regular" FontSize="12"  Margin="16 2" 
-                   Foreground="{Binding SupportingTextForeground, RelativeSource={RelativeSource AncestorType=UserControl}}">
+            <TextBlock Text="{Binding SupportingText, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                       FontWeight="Regular" FontSize="12"  Margin="16 2" 
+                       FontFamily="{Binding FontFamily, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                       FontStretch="{Binding FontStretch, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                       FontStyle="{Binding FontStyle, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                       Foreground="{Binding SupportingTextForeground, RelativeSource={RelativeSource AncestorType=UserControl}}">
             </TextBlock>
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SupportingText, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SupportingText, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
         </Border>
     </Grid>
 </UserControl>

@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:md="clr-namespace:DariuszLabaj.MaterialIo461.CustomUserControl">
     <!-- TextBlock -->
     <Style TargetType="TextBlock" BasedOn="{StaticResource md.body-TextBlock}">
         <Setter Property="Foreground" Value="{DynamicResource onPrimaryContainerBrush}"/>
@@ -159,4 +160,31 @@
         <Setter Property="Background" Value="{DynamicResource surfaceContainerBrush}"/>
     </Style>
     <Style TargetType="ProgressBar" BasedOn="{StaticResource md.ProgressBar}"/>
+    <!-- Text Input -->
+    <Style x:Key="md.TextInput" TargetType="md:TextInput" BasedOn="{StaticResource md.TextInput}">
+        <Setter Property="Background" Value="{DynamicResource surfaceContainerBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource onSurfaceBrush}"/>
+        <Setter Property="SupportingTextBackground" Value="{DynamicResource primaryContainerBrush}"/>
+        <Setter Property="SupportingTextForeground" Value="{DynamicResource onPrimaryContainerBrush}"/>
+    </Style>
+    <Style TargetType="md:TextInput" BasedOn="{StaticResource md.TextInput}"/>
+    <!-- TabControl -->
+    <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}">
+        <Setter Property="Background" Value="{DynamicResource secondaryContainerBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource primaryBrush}"/>
+        <Setter Property="Tag" Value="{DynamicResource onPrimaryBrush}"/>
+        <Style.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary>
+                        <Style TargetType="Border" BasedOn="{StaticResource OutlinedCard}">
+                            <Setter Property="Background" Value="{DynamicResource tertiaryContainerBrush}"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource tertiaryBrush}"/>
+                        </Style>
+                    </ResourceDictionary>
+                    <ResourceDictionary Source="/DariuszLabaj.MaterialIo461;component/Styles/secondaryContainer.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Style.Resources>
+    </Style>
 </ResourceDictionary>
