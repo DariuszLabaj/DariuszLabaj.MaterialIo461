@@ -13,5 +13,7 @@
         <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/ScrollBarStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/TabControlStyles.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/UserInputsStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/DataGridStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/DariuszLabaj.MaterialIo461;component/Styles/ListBoxStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

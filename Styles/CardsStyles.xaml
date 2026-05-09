@@ -124,8 +124,8 @@
         </Style.Triggers>
     </Style>
     <BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
-    <Style x:Key="GroupBoxStyleOutlined" TargetType="{x:Type GroupBox}">
-        <Setter Property="BorderBrush" Value="#D5DFE5"/>
+    <Style x:Key="md.GroupBox" TargetType="{x:Type GroupBox}">
+        <Setter Property="BorderBrush" Value="{DynamicResource outlineBrush}"/>
         <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Template">

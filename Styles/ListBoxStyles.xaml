@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="md.ListBoxItem" TargetType="ListBoxItem">
+        <Setter Property="Foreground" Value="{DynamicResource primaryFixedDimBrush}"/>
+    </Style>
+    <Style x:Key="md.ListBox" TargetType="ListBox">
+        <Setter Property="Background" Value="{DynamicResource surfaceBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource primaryBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="ItemContainerStyle" Value="{StaticResource md.ListBoxItem}"/>
+        <Setter Property="Margin" Value="8"/>
+        <Setter Property="Padding" Value="4"/>
+    </Style>
+</ResourceDictionary>

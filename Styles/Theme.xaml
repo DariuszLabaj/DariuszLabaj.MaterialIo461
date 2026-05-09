@@ -62,8 +62,13 @@
     <!-- Password Input -->
     <Style TargetType="md:PasswordInput" BasedOn="{StaticResource md.PasswordInput}"/>
     <!-- TabControl -->
-    <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}">
-    </Style>
+    <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}"/>
+    <!-- DataGrid -->
+    <Style TargetType="DataGrid" BasedOn="{StaticResource md.DataGrid}"/>
+    <!-- GroupBox -->
+    <Style TargetType="GroupBox" BasedOn="{StaticResource md.GroupBox}"/>
+    <!-- ListBox -->
+    <Style TargetType="ListBox" BasedOn="{StaticResource md.ListBox}"/>
     <!-- Borders -->
     <Style x:Key="FilledCard" TargetType="Border" BasedOn="{StaticResource FilledCard}">
         <Setter Property="Background" Value="{DynamicResource surfaceContainerBrush}"/>
