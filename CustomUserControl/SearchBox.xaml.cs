@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,13 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public static readonly DependencyProperty BackgroundProperty = DependencyProperty.Register("Background", typeof(Brush), typeof(SearchBox), new PropertyMetadata(new SolidColorBrush(Colors.Transparent)));
         public static readonly DependencyProperty BorderThicknessProperty = DependencyProperty.Register("BorderThickness", typeof(Thickness), typeof(SearchBox), new PropertyMetadata(new Thickness(0)));
+        public static readonly DependencyProperty FontSizeProperty = TextElement.FontSizeProperty.AddOwner(typeof(SearchBox), new FrameworkPropertyMetadata(12.0, OnFontSizeChanged));
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+        private static void OnFontSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (SearchBox)d;
+            control.MinHeight = (double)e.NewValue * 3;
+        }
         public string Text
         {
             get { return (string)GetValue(TextProperty); }

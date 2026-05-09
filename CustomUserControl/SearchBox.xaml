@@ -7,109 +7,101 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
              xmlns:local="clr-namespace:DariuszLabaj.MaterialIo461.CustomUserControl"
-             mc:Ignorable="d"
-             Height="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 3}}"
-             >
-    <Grid Background="Transparent">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <Border x:Name="border" 
-                CornerRadius="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 0.5}}"
-                BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                Grid.ColumnSpan="3">
-            <Border.Style>
-                <Style TargetType="Border">
-                    <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-                </Style>
-            </Border.Style>
-        </Border>
-        <ContentControl Margin="4 0 0 0" Height="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 1.5}}" Grid.Column="0"
-                        Content="{StaticResource search_48px_svg}">
-            <ContentControl.Style>
-                <Style TargetType="ContentControl">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="{x:Null}">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </ContentControl.Style>
-        </ContentControl>
-        <TextBox Margin="2 0" Grid.Column="1"
-                 Text="{Binding Text, RelativeSource={RelativeSource AncestorType=UserControl}, UpdateSourceTrigger=PropertyChanged}"
-                 TextWrapping="{Binding TextWrapping, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                 AcceptsReturn="{Binding AcceptsReturn, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                 FontFamily="{Binding FontFamily, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                 FontSize="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                 FontStretch="{Binding FontStretch, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                 FontStyle="{Binding FontStyle, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                 FontWeight="{Binding FontWeight, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                 BorderThickness="0"
-                 Background="Transparent"
-                 Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                 VerticalContentAlignment="Center"
-                 x:Name="TextBoxField"/>
-        <TextBlock IsHitTestVisible="False"
-                    Text="{Binding SearchPrompt, RelativeSource={RelativeSource AncestorType={x:Type local:SearchBox}}}"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Left"
-                    Margin="2 0"
-                    Foreground="{Binding Tag, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    FontFamily="{Binding FontFamily, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    FontSize="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    FontStretch="{Binding FontStretch, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    FontStyle="{Binding FontStyle, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    FontWeight="{Binding FontWeight, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    Grid.Column="1">
-            <TextBlock.Style>
-                <Style TargetType="TextBlock">
-                    <Setter Property="Visibility" Value="Hidden"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-        <Button Grid.Column="2" x:Name="button" 
-                Content="{StaticResource close_48px_svg}"
-                VerticalAlignment="Center"
-                Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                Height="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 1.5}}"
-                Margin="0 0 4 0"
-                Padding="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="Click" SourceObject="{Binding ElementName=button}">
-                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=TextBoxField}" PropertyName="Text" Value=""/>
-                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=TextBoxField}" PropertyName="Text" Value="{x:Null}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="BorderBrush" Value="Transparent"/>
-                    <Setter Property="Visibility" Value="Visible"/>
-                    <Setter Property="MinWidth" Value="0"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="">
-                            <Setter Property="Visibility" Value="Hidden"/>
-                        </DataTrigger>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Visibility" Value="Hidden"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-    </Grid>
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="Border">
+            <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+            <Setter Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+            <Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+            <Setter Property="CornerRadius" Value="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 0.5}}"/>
+        </Style>
+    </UserControl.Resources>
+    <Border Grid.ColumnSpan="3" d:Background="White">
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ContentControl Margin="4 0 0 0" Height="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 1.5}}" Grid.Column="0"
+                            Content="{StaticResource search_48px_svg}">
+                <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ContentControl.Style>
+            </ContentControl>
+            <TextBox Margin="2 0" Grid.Column="1"
+                     Text="{Binding Text, RelativeSource={RelativeSource AncestorType=UserControl}, UpdateSourceTrigger=PropertyChanged}"
+                     FontFamily="{Binding FontFamily, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     FontSize="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     FontStretch="{Binding FontStretch, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     FontStyle="{Binding FontStyle, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     FontWeight="{Binding FontWeight, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     VerticalContentAlignment="Center"
+                     x:Name="TextBoxField"/>
+            <TextBlock IsHitTestVisible="False"
+                        Text="{Binding SearchPrompt, RelativeSource={RelativeSource AncestorType={x:Type local:SearchBox}}}"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="2 0"
+                        Foreground="{Binding Tag, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        FontFamily="{Binding FontFamily, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        FontSize="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        FontStretch="{Binding FontStretch, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        FontStyle="{Binding FontStyle, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        FontWeight="{Binding FontWeight, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                        Grid.Column="1">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Visibility" Value="Hidden"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Button Grid.Column="2" x:Name="button" 
+                    Content="{StaticResource close_48px_svg}"
+                    Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Height="{Binding FontSize, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={converters:ScaleConverter 1.5}}"
+                    Margin="0 0 4  0"
+                    Padding="0" Focusable="False" IsTabStop="False">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click" SourceObject="{Binding ElementName=button}">
+                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=TextBoxField}" PropertyName="Text" Value=""/>
+                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=TextBoxField}" PropertyName="Text" Value="{x:Null}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Visibility" Value="Visible"/>
+                        <Setter Property="MinWidth" Value="0"/>
+                        <Setter Property="Template" Value="{DynamicResource md.sys.Button.ControlTemplate-icon}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=TextBoxField}" Value="">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                            </DataTrigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Border>
 </UserControl>

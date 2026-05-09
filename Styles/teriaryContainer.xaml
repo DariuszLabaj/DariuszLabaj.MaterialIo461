@@ -209,7 +209,7 @@
     </Style>
     <Style TargetType="md:PasswordInput" BasedOn="{StaticResource md.PasswordInput}"/>
     <!-- TabControl -->
-    <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}">
+    <Style x:Key="md.TabControl" TargetType="TabControl" BasedOn="{StaticResource md.TabControl}">
         <Setter Property="Background" Value="{DynamicResource tertiaryContainerBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource tertiaryBrush}"/>
         <Setter Property="Tag" Value="{DynamicResource onTertiaryBrush}"/>
@@ -220,4 +220,5 @@
             </Style>
         </Style.Resources>
     </Style>
+    <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}"/>
 </ResourceDictionary>

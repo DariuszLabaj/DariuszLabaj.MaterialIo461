@@ -186,7 +186,7 @@
     </Style>
     <Style TargetType="md:SearchBox" BasedOn="{StaticResource md.SearchBox}"/>
     <!-- TabControl -->
-    <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}">
+    <Style x:Key="md.TabControl" TargetType="TabControl" BasedOn="{StaticResource md.TabControl}">
         <Setter Property="Background" Value="{DynamicResource secondaryContainerBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource primaryBrush}"/>
         <Setter Property="Tag" Value="{DynamicResource onPrimaryBrush}"/>
@@ -204,4 +204,5 @@
             </ResourceDictionary>
         </Style.Resources>
     </Style>
+    <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}"/>
 </ResourceDictionary>

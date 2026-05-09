@@ -179,7 +179,7 @@
     <Style TargetType="TextBlock" BasedOn="{StaticResource md.body-TextBlock}"/>
 
     <!-- TextBox -->
-    <SolidColorBrush x:Key="md.sys.highlightBrush" Color="{StaticResource primaryFixed}"/>
+    <SolidColorBrush x:Key="md.sys.highlightBrush" Color="{DynamicResource primaryFixed}"/>
     
     <ControlTemplate x:Key="md.sys.TextBox.ControlTemplate" TargetType="{x:Type TextBoxBase}">
         <ControlTemplate.Resources>

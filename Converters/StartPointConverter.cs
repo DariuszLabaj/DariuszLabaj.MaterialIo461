@@ -23,7 +23,6 @@ namespace DariuszLabaj.MaterialIo461.Converters
             {
                 var radius = (actualWidth / 2) - (actualWidth * 0.05);
                 var pt = GetPointFromAngle(degrees: 0.0, size: actualWidth, radius: radius);
-                Debug.WriteLine(pt);
                 return pt;
             }
             return new Point(0, 0);

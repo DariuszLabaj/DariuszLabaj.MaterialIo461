@@ -35,6 +35,14 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
         public static readonly DependencyProperty SupportingTextForegroundProperty = DependencyProperty.Register("SupportingTextForeground", typeof(Brush), typeof(PasswordInput), new PropertyMetadata(Brushes.DimGray));
         public static readonly DependencyProperty SupportingTextBackgroundProperty = DependencyProperty.Register("SupportingTextBackground", typeof(Brush), typeof(PasswordInput), new PropertyMetadata(Brushes.Transparent));
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
+        public static readonly DependencyProperty FontSizeProperty = TextElement.FontSizeProperty.AddOwner(typeof(PasswordInput), new FrameworkPropertyMetadata(12.0, OnFontSizeChanged));
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+        private static void OnFontSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (PasswordInput)d;
+            control.MinHeight = (double)e.NewValue * 3;
+        }
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public Brush Background
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         {

@@ -217,6 +217,51 @@
     </ControlTemplate>
 
     <!-- ========================================================= -->
+    <!-- Button Text -->
+    <!-- ========================================================= -->
+
+    <ControlTemplate x:Key="md.sys.Button.ControlTemplate-icon" TargetType="Button">
+        <Border x:Name="MainBorder" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                Background="Transparent" BorderThickness="0" BorderBrush="Transparent">
+            <Border  x:Name="SubBorder" 
+             Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+             CornerRadius="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}, Converter={converters:ScaleConverter 0.5}}" 
+             Background="#00FFFFFF">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}">
+                    <ContentPresenter Content="{TemplateBinding Content}" Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ContentPresenter.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </ContentPresenter.Resources>
+                    </ContentPresenter>
+                </StackPanel>
+            </Border>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="SubBorder" Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#20000000"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="SubBorder" Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="#40000000"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="MainBorder" Property="Opacity" Value="0.5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!-- ========================================================= -->
     <!-- ToggleButton Filled -->
     <!-- ========================================================= -->
 

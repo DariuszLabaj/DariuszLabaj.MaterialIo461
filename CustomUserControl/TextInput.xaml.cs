@@ -34,6 +34,14 @@ namespace DariuszLabaj.MaterialIo461.CustomUserControl
         public static readonly DependencyProperty SupportingTextForegroundProperty = DependencyProperty.Register("SupportingTextForeground", typeof(Brush), typeof(TextInput), new PropertyMetadata(Brushes.DimGray));
         public static readonly DependencyProperty SupportingTextBackgroundProperty = DependencyProperty.Register("SupportingTextBackground", typeof(Brush), typeof(TextInput), new PropertyMetadata(Brushes.Transparent));
         public static readonly DependencyProperty AcceptsReturnProperty = DependencyProperty.Register("AcceptsReturn", typeof(bool), typeof(TextInput), new PropertyMetadata(false));
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
+        public static readonly DependencyProperty FontSizeProperty = TextElement.FontSizeProperty.AddOwner(typeof(TextInput), new FrameworkPropertyMetadata(12.0, OnFontSizeChanged));
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+        private static void OnFontSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (TextInput)d;
+            control.MinHeight = (double)e.NewValue * 3;
+        }
         public TextWrapping TextWrapping
         {
             get { return (TextWrapping)GetValue(TextWrappingProperty); }
