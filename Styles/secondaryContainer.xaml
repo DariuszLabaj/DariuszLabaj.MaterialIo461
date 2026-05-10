@@ -228,4 +228,10 @@
         </Style.Resources>
     </Style>
     <Style TargetType="TabControl" BasedOn="{StaticResource md.TabControl}"/>
+    <!-- ListBox -->
+    <Style x:Key="md.ListBox" TargetType="ListBox" BasedOn="{StaticResource md.ListBox}">
+        <Setter Property="Foreground" Value="{DynamicResource secondaryContainerBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource secondaryBrush}"/>
+    </Style>
+    <Style TargetType="ListBox" BasedOn="{StaticResource md.ListBox}"/>
 </ResourceDictionary>

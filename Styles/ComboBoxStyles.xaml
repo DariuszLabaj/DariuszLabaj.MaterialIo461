@@ -142,6 +142,8 @@
         <Setter Property="Template" Value="{StaticResource md.sys.ComboBoxItem.ControlTemplate}"/>
     </Style>
     <Style x:Key="md.comboBox" TargetType="ComboBox">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template" Value="{StaticResource md.sys.ComboBox.ControlTemplate}"/>
         <Setter Property="ItemContainerStyle" Value="{StaticResource md.comboBoxItem}"/>
